@@ -24,7 +24,7 @@ const User = () => {
         <p>mail@mail.com</p>
       </div>
       <div className="profile__button-container">
-        <button className="header__link mt-10" onClick={handleLogoutUser}>
+        <button className="link mt-10" onClick={handleLogoutUser}>
           Log out
         </button>
       </div>

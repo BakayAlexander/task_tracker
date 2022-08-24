@@ -15,7 +15,7 @@ const Header = () => {
 
   return (
     <header>
-      <a href="/" className="header__link">
+      <a href="/" className="link">
         Task Tracker
       </a>
       <div className="flex items-center space-x-2 md:space-x-10">
@@ -23,14 +23,14 @@ const Header = () => {
           <p className="hidden md:inline">Michael Lawson</p>
           <p>email@mail.com</p>
         </div>
-        <a href="/user" className="header__link">
+        <a href="/user" className="link">
           <img
             src="https://reqres.in/img/faces/8-image.jpg"
             alt="Profile icon"
             className="cursor-pointer rounded h-10 w-10"
           />
         </a>
-        <button onClick={handleLogoutUser} className="header__link">
+        <button onClick={handleLogoutUser} className="link">
           <BiExit className="h-7 w-7" />
         </button>
       </div>

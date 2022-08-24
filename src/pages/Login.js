@@ -12,7 +12,7 @@ const Login = () => {
   const initialValues = { email: '', password: '' };
 
   return (
-    <div
+    <section
       className="relative flex h-screen w-screen flex-col bg-black md:items-center justify-center
      md:bg-transparent"
     >
@@ -77,7 +77,7 @@ const Login = () => {
           </div>
         </Form>
       </Formik>
-    </div>
+    </section>
   );
 };
 

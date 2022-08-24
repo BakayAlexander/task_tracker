@@ -1,1 +1,1 @@
-export const apiURL = 'https://reqres.in/';
+export const apiURL = 'https://reqres.in';

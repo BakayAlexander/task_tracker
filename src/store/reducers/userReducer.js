@@ -6,6 +6,9 @@ import {
   LOGIN_USER_SUCCESS,
   LOGIN_USER_FAILURE,
   LOGOUT_USER,
+  GET_USERS_REQUEST,
+  GET_USERS_SUCCESS,
+  GET_USERS_FAILURE,
 } from '../actions/userActions';
 
 const initialState = {
@@ -26,6 +29,7 @@ const usersReducer = (state = initialState, action) => {
         ...state,
         createUserLoading: false,
         createUserError: null,
+        token: action.res,
       };
     case CREATE_USER_FAILURE:
       return {

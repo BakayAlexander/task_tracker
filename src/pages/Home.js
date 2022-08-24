@@ -1,33 +1,26 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { loginUser, registerUser } from '../store/actions/userActions';
+import { useNavigate } from 'react-router-dom';
+import { getAllUsers, logoutUser } from '../store/actions/userActions';
 
 const Home = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
-  const handleRegisterUser = () => {
-    dispatch(
-      registerUser({
-        email: 'eve.holt@reqres.in',
-        password: 'persist',
-      }),
-    );
+  const handleLogoutUser = () => {
+    dispatch(logoutUser());
+    navigate('/login');
   };
 
-  const handleLoginUser = () => {
-    dispatch(
-      loginUser({
-        email: 'eve.holt@reqres.in',
-        password: 'persist',
-      }),
-    );
+  const handleGetAllUsers = () => {
+    dispatch(getAllUsers());
   };
 
   return (
     <>
       <div>Home</div>
-      <button onClick={handleRegisterUser}>Register</button>
-      <button onClick={handleLoginUser}>Login</button>
+      <button onClick={handleLogoutUser}>Logout</button>
+      <button onClick={handleGetAllUsers}>Get all users</button>
     </>
   );
 };

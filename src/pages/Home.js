@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Loader from '../components/Loader';
 import UserCard from '../components/UserCard';
-import { getAllUsers } from '../store/actions/getAllUsersAction';
+import { getAllUsers } from '../store/actions/getAllUsersActions';
 import { pagination } from '../utils/pagination';
 
 const Home = () => {

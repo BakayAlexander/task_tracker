@@ -12,19 +12,6 @@ const Register = () => {
   const isLoading = useSelector(state => state.user.createUserLoading);
   const initialValues = { email: '', password: '' };
 
-  const handleRegisterUser = () => {
-    dispatch(
-      registerUser({
-        email: 'eve.holt@reqres.in',
-        password: 'persist',
-      }),
-    ).then(res => {
-      if (res) {
-        navigate('/login');
-      }
-    });
-  };
-
   useEffect(() => {
     if (localToken) {
       navigate('/');

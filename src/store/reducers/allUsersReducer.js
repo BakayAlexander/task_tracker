@@ -1,4 +1,4 @@
-import { GET_USERS_FAILURE, GET_USERS_REQUEST, GET_USERS_SUCCESS } from '../actions/getAllUsersAction';
+import { GET_USERS_FAILURE, GET_USERS_REQUEST, GET_USERS_SUCCESS } from '../actions/getAllUsersActions';
 
 const initialState = {
   allUsersLoading: true,
@@ -7,7 +7,7 @@ const initialState = {
   allUsers: null,
 };
 
-const getAllUsersReducer = (state = initialState, action) => {
+const allUsersReducer = (state = initialState, action) => {
   switch (action.type) {
     case GET_USERS_REQUEST:
       return { ...state, allUsersLoading: true };
@@ -27,4 +27,4 @@ const getAllUsersReducer = (state = initialState, action) => {
   }
 };
 
-export default getAllUsersReducer;
+export default allUsersReducer;

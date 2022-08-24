@@ -1,6 +1,7 @@
 import { Provider } from 'react-redux';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import PageLayout from './components/PageLayout';
+import Colors from './pages/Colors';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import NotFound from './pages/NotFound';
@@ -29,6 +30,14 @@ function App() {
             element={
               <PageLayout>
                 <User />
+              </PageLayout>
+            }
+          />
+          <Route
+            path="/colors"
+            element={
+              <PageLayout>
+                <Colors />
               </PageLayout>
             }
           />

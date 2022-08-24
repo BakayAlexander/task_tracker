@@ -7,6 +7,7 @@ import NotFound from './pages/NotFound';
 import Register from './pages/Register';
 import User from './pages/User';
 import { store } from './store/configureStore';
+import './styles/global.css';
 
 function App() {
   return (
@@ -31,7 +32,14 @@ function App() {
               </PageLayout>
             }
           />
-          <Route path="*" element={<NotFound />} />
+          <Route
+            path="*"
+            element={
+              <PageLayout>
+                <NotFound />
+              </PageLayout>
+            }
+          />
         </Routes>
       </BrowserRouter>
     </Provider>

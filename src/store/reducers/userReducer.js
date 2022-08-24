@@ -6,9 +6,6 @@ import {
   LOGIN_USER_SUCCESS,
   LOGIN_USER_FAILURE,
   LOGOUT_USER,
-  GET_USERS_REQUEST,
-  GET_USERS_SUCCESS,
-  GET_USERS_FAILURE,
 } from '../actions/userActions';
 
 const initialState = {
@@ -23,7 +20,7 @@ const initialState = {
 const usersReducer = (state = initialState, action) => {
   switch (action.type) {
     case CREATE_USER_REQUEST:
-      return { ...state, createUserLoading: true };
+      return { ...state, createUserLoading: true, createUserError: null };
     case CREATE_USER_SUCCESS:
       return {
         ...state,
@@ -39,7 +36,7 @@ const usersReducer = (state = initialState, action) => {
       };
 
     case LOGIN_USER_REQUEST:
-      return { ...state, loginUserLoading: true };
+      return { ...state, loginUserLoading: true, loginUserError: null };
     case LOGIN_USER_SUCCESS:
       return {
         ...state,

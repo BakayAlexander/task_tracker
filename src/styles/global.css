@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  header {
+    @apply w-full flex items-center justify-between px-4 py-4 transition-all lg:px-10 lg:py-6;
+  }
+  body {
+    @apply bg-[#141414] text-white;
+  }
+}
+
+@layer components {
+  .header__link {
+    @apply cursor-pointer text-xl font-light text-[#e5e5e5] transition duration-[0.4s] hover:text-[#b3b3b3];
+  }
+  .auth__input {
+    @apply w-full rounded bg-[#333] px-5 py-3.5 placeholder-[gray] outline-none focus:bg-[#454545];
+  }
+  .auth__button {
+    @apply w-full rounded bg-[#54599f] py-3 font-semibold transition duration-[0.4s] hover:bg-[#212bba];
+  }
+  .auth__error {
+    @apply p-1 text-[13px] font-light  text-orange-500;
+  }
+  .card__mail {
+    @apply cursor-pointer text-xl font-light text-[#e5e5e5] transition duration-[0.4s] hover:text-[#b3b3b3] hidden md:inline;
+  }
+  .pagination__button {
+    @apply cursor-pointer text-xl font-light text-[#e5e5e5] transition duration-[0.4s] hover:text-[#b3b3b3];
+  }
+}

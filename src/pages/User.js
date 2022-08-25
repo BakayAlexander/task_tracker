@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
@@ -8,13 +8,27 @@ const User = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
+  const initialState = {
+    first_name: 'Alexander',
+    last_name: 'Bakay',
+    avatar: 'https://reqres.in/img/faces/4-image.jpg',
+    id: '1',
+    email: 'bakay.dvr@gmail.com',
+  };
+  const [currentUser, setCurrentUser] = useState(initialState);
+  const localStorageUser = JSON.parse(localStorage.getItem('user'));
+
+  //! This useEffect needed only case, when during session user goes to localStorage and removing user item
+  useEffect(() => {
+    if (!localStorageUser) return;
+    setCurrentUser(localStorageUser);
+  }, []);
+
   const handleLogoutUser = () => {
     dispatch(logoutUser());
     navigate('/login');
   };
 
-  const currentUser = JSON.parse(localStorage.getItem('user'));
-  //! I'm not using useEffect here for put default values in the case when user deleting a user item from localStorage (look Header.js)
   return (
     <section className='w-full flex flex-col items-center gap-4'>
       <h2 className='text-xl my-20'>{`Hello, ${

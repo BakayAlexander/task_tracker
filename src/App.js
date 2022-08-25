@@ -14,10 +14,10 @@ function App() {
     <Provider store={store}>
       <BrowserRouter>
         <Routes>
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
+          <Route path='/login' element={<Login />} />
+          <Route path='/register' element={<Register />} />
           <Route
-            path="/"
+            path='/'
             element={
               <PageLayout>
                 <Home />
@@ -25,7 +25,7 @@ function App() {
             }
           />
           <Route
-            path="/user"
+            path='/user'
             element={
               <PageLayout>
                 <User />
@@ -33,7 +33,7 @@ function App() {
             }
           />
           <Route
-            path="*"
+            path='*'
             element={
               <PageLayout>
                 <NotFound />

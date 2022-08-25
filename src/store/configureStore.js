@@ -9,4 +9,7 @@ const rootReducer = combineReducers({
   allUsers: getAllUsersReducer,
 });
 
-export const store = configureStore({ reducer: rootReducer, middleware: [thunkMiddleware] });
+export const store = configureStore({
+  reducer: rootReducer,
+  middleware: [thunkMiddleware],
+});

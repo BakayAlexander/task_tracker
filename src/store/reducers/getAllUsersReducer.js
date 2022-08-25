@@ -1,4 +1,8 @@
-import { GET_USERS_FAILURE, GET_USERS_REQUEST, GET_USERS_SUCCESS } from '../actions/getAllUsersAction';
+import {
+  GET_USERS_FAILURE,
+  GET_USERS_REQUEST,
+  GET_USERS_SUCCESS,
+} from '../actions/getAllUsersAction';
 
 const initialState = {
   allUsersLoading: true,
@@ -10,7 +14,10 @@ const initialState = {
 const getAllUsersReducer = (state = initialState, action) => {
   switch (action.type) {
     case GET_USERS_REQUEST:
-      return { ...state, allUsersLoading: true };
+      return {
+        ...state,
+        allUsersLoading: true,
+      };
     case GET_USERS_SUCCESS:
       return {
         ...state,
@@ -20,7 +27,11 @@ const getAllUsersReducer = (state = initialState, action) => {
         totalPages: action.res.total_pages,
       };
     case GET_USERS_FAILURE:
-      return { ...state, allUsersLoading: false, allUsersError: action.error };
+      return {
+        ...state,
+        allUsersLoading: false,
+        allUsersError: action.error,
+      };
 
     default:
       return state;

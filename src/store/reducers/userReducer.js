@@ -20,7 +20,11 @@ const initialState = {
 const usersReducer = (state = initialState, action) => {
   switch (action.type) {
     case CREATE_USER_REQUEST:
-      return { ...state, createUserLoading: true, createUserError: null };
+      return {
+        ...state,
+        createUserLoading: true,
+        createUserError: null,
+      };
     case CREATE_USER_SUCCESS:
       return {
         ...state,
@@ -36,7 +40,11 @@ const usersReducer = (state = initialState, action) => {
       };
 
     case LOGIN_USER_REQUEST:
-      return { ...state, loginUserLoading: true, loginUserError: null };
+      return {
+        ...state,
+        loginUserLoading: true,
+        loginUserError: null,
+      };
     case LOGIN_USER_SUCCESS:
       return {
         ...state,

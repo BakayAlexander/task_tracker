@@ -11,12 +11,24 @@ export const LOGIN_USER_FAILURE = 'LOGIN_USER_FAILURE';
 export const LOGOUT_USER = 'LOGOUT_USER';
 
 export const createUserRequest = () => ({ type: CREATE_USER_REQUEST });
-export const createUserSuccess = res => ({ type: CREATE_USER_SUCCESS, res });
-export const createUserFailure = error => ({ type: CREATE_USER_FAILURE, error });
+export const createUserSuccess = res => ({
+  type: CREATE_USER_SUCCESS,
+  res,
+});
+export const createUserFailure = error => ({
+  type: CREATE_USER_FAILURE,
+  error,
+});
 
 export const loginUserRequest = () => ({ type: LOGIN_USER_REQUEST });
-export const loginUserSuccess = res => ({ type: LOGIN_USER_SUCCESS, res });
-export const loginUserFailure = error => ({ type: LOGIN_USER_FAILURE, error });
+export const loginUserSuccess = res => ({
+  type: LOGIN_USER_SUCCESS,
+  res,
+});
+export const loginUserFailure = error => ({
+  type: LOGIN_USER_FAILURE,
+  error,
+});
 
 export const logoutUserRequest = () => ({ type: LOGOUT_USER });
 
@@ -50,7 +62,9 @@ export const loginUser = data => {
       const currentUser = allUsers.filter(user => user.email === data.email)[0];
       localStorage.setItem('token', response.data.token);
       localStorage.setItem('user', JSON.stringify(currentUser));
-      dispatch(loginUserSuccess({ token: response.data.token, user: currentUser }));
+      dispatch(
+        loginUserSuccess({ token: response.data.token, user: currentUser })
+      );
 
       return response;
     } catch (error) {
@@ -68,5 +82,6 @@ export const logoutUser = () => {
   return dispatch => {
     dispatch(logoutUserRequest());
     localStorage.removeItem('token');
+    localStorage.removeItem('user');
   };
 };

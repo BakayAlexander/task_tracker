@@ -19,12 +19,11 @@ Simple Task Tracker, but for now it only tracks user's profiles.
 
 ### :astronaut: User guide:
 
-1. Register or Log in with one of these emails(
-
+1. Register or Log in with one of these emails:
 - eve.holt@reqres.in
 - tracey.ramos@reqres.in
 - lindsay.ferguson@reqres.in
-  ).
+
   You can use any password for registration and log in, because api, doesn't check it.
 
 2. List throw the users, or go to the next page using pagination.

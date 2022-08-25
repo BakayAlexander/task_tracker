@@ -1,12 +1,16 @@
 import { Provider } from 'react-redux';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import PageLayout from './components/PageLayout';
-import Home from './pages/Home';
-import Login from './pages/Login';
-import NotFound from './pages/NotFound';
-import Register from './pages/Register';
-import User from './pages/User';
+
+import PageLayout from './components/PageLayout/PageLayout';
+
+import Home from './pages/Home/Home';
+import Login from './pages/Login/Login';
+import NotFound from './pages/NotFound/NotFound';
+import Register from './pages/Register/Register';
+import User from './pages/User/User';
+
 import { store } from './store/configureStore';
+
 import './styles/global.css';
 
 function App() {
@@ -14,8 +18,14 @@ function App() {
     <Provider store={store}>
       <BrowserRouter>
         <Routes>
-          <Route path='/login' element={<Login />} />
-          <Route path='/register' element={<Register />} />
+          <Route
+            path='/login'
+            element={<Login />}
+          />
+          <Route
+            path='/register'
+            element={<Register />}
+          />
           <Route
             path='/'
             element={

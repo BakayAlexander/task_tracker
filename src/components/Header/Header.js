@@ -3,7 +3,9 @@ import { BiExit } from 'react-icons/bi';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
-import { logoutUser } from '../store/actions/userActions';
+import { logoutUser } from '../../store/actions/userActions';
+
+import styles from './header.module.css';
 
 const Header = () => {
   const dispatch = useDispatch();
@@ -39,17 +41,17 @@ const Header = () => {
       >
         Task Tracker
       </a>
-      <div className='flex items-center space-x-2 md:space-x-10'>
-        <div className='flex flex-col text-[#b3b3b3] text-sm'>
-          <p className='hidden md:inline'>{`${currentUser.first_name} ${currentUser.last_name}`}</p>
-          <p className='hidden md:inline'>{currentUser.email}</p>
+      <div className={styles.headerContainer}>
+        <div className={styles.headerUserInfo}>
+          <p>{`${currentUser.first_name} ${currentUser.last_name}`}</p>
+          <p>{currentUser.email}</p>
         </div>
         <a
           className='link'
           href='/user'
         >
           <img
-            className='cursor-pointer rounded h-10 w-10'
+            className={styles.headerUserImage}
             src={currentUser.avatar}
             alt='Profile icon'
           />

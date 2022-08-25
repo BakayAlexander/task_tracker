@@ -1,0 +1,19 @@
+.user {
+  @apply w-full flex flex-col items-center gap-4;
+}
+
+.userTitle {
+  @apply text-xl my-20;
+}
+
+.userInfoContainer {
+  @apply flex justify-between w-4/5 md:w-1/5 border-b border-white/25 pb-1;
+}
+
+.userInfoLabel {
+  @apply text-[#b3b3b3];
+}
+
+.userButtonContainer {
+  @apply flex flex-col mt-10;
+}

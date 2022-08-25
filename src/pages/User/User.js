@@ -2,7 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
-import { logoutUser } from '../store/actions/userActions';
+import { logoutUser } from '../../store/actions/userActions';
+
+import styles from './user.module.css';
 
 const User = () => {
   const dispatch = useDispatch();
@@ -30,22 +32,22 @@ const User = () => {
   };
 
   return (
-    <section className='w-full flex flex-col items-center gap-4'>
-      <h2 className='text-xl my-20'>{`Hello, ${
+    <section className={styles.user}>
+      <h2 className={styles.userTitle}>{`Hello, ${
         currentUser.first_name || 'Alexander'
       }!`}</h2>
-      <div className='flex justify-between w-4/5 md:w-1/5 border-b border-white/25 pb-1'>
-        <p className='text-[#b3b3b3]'>Name</p>
+      <div className={styles.userInfoContainer}>
+        <p className={styles.userInfoLabel}>Name</p>
         <p>
           {`${currentUser.first_name} ${currentUser.last_name}` ||
             'Alexander Bakay'}
         </p>
       </div>
-      <div className='flex justify-between w-4/5 md:w-1/5  border-b border-white/25 pb-1'>
-        <p className='text-[#b3b3b3]'>Email</p>
+      <div className={styles.userInfoContainer}>
+        <p className={styles.userInfoLabel}>Email</p>
         <p>{currentUser.email || 'mail@mail.com'}</p>
       </div>
-      <div className='flex flex-col mt-10'>
+      <div className={styles.userButtonContainer}>
         <button
           className='link'
           onClick={() => {

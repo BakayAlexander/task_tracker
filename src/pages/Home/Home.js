@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import Loader from '../components/Loader';
-import UserCardPrimary from '../components/UserCardPrimary';
+import Loader from '../../components/Loader/Loader';
+import UserCard from '../../components/UserCard/UserCard';
 
-import { getAllUsers } from '../store/actions/getAllUsersAction';
+import { getAllUsers } from '../../store/actions/getAllUsersAction';
 
-import { pagination } from '../utils/pagination';
+import { pagination } from '../../utils/pagination';
+
+import styles from './home.module.css';
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -25,9 +27,9 @@ const Home = () => {
       {isLoading ? (
         <Loader />
       ) : (
-        <section className='flex flex-col justify-center items-center w-full gap-5 mt-7 mb-10'>
+        <section className={styles.home}>
           {allUsers.map(user => (
-            <UserCardPrimary
+            <UserCard
               key={user.id}
               name={user.first_name}
               surname={user.last_name}
@@ -35,10 +37,10 @@ const Home = () => {
               imageUrl={user.avatar}
             />
           ))}
-          <div className='flex gap-5'>
+          <div className={styles.homePaginationContainer}>
             {pagination(totalPages).map(number => (
               <button
-                className={`pagination__button ${
+                className={`${styles.paginationButton} ${
                   page === number && 'font-semibold'
                 }`}
                 key={number}

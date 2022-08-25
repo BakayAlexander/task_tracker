@@ -15,7 +15,7 @@ export const getAllUsers = (page = 1) => {
       const response = await axiosApi.get(`/api/users?page=${page}`);
       dispatch(allUsersSuccess(response.data));
     } catch (error) {
-      console.log(error);
+      console.log('Failed to get users: ', error);
       if (error.response) {
         dispatch(allUsersFailure(error.response.data));
       } else {

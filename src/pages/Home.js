@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Loader from '../components/Loader';
-import UserCard from '../components/UserCard';
+import UserCardPrimary from '../components/UserCardPrimary';
 import { getAllUsers } from '../store/actions/getAllUsersAction';
 import { pagination } from '../utils/pagination';
 
@@ -23,7 +23,7 @@ const Home = () => {
       ) : (
         <section className="flex flex-col justify-center items-center w-full gap-5 mt-7 mb-10">
           {allUsers.map(user => (
-            <UserCard
+            <UserCardPrimary
               key={user.id}
               name={user.first_name}
               surname={user.last_name}

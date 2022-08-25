@@ -1,7 +1,7 @@
 import React from 'react';
 import { AiOutlineMail } from 'react-icons/ai';
 
-const UserCard = ({ imageUrl, name, surname, email }) => {
+const UserCardPrimary = ({ imageUrl, name, surname, email }) => {
   return (
     <div className="w-4/5 md:w-2/5 flex border border-white/75 px-4 py-2.5 rounded justify-between transition-all duration-[0.4s] md:hover:scale-125">
       <img src={imageUrl} alt="Profile icon" className="cursor-pointer rounded h-20 w-20" />
@@ -18,4 +18,4 @@ const UserCard = ({ imageUrl, name, surname, email }) => {
   );
 };
 
-export default UserCard;
+export default UserCardPrimary;

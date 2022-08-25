@@ -42,8 +42,8 @@ const usersReducer = (state = initialState, action) => {
         ...state,
         loginUserLoading: false,
         loginUserError: null,
-        // user: action.user,
-        token: action.res,
+        user: action.res.user,
+        token: action.res.token,
       };
     case LOGIN_USER_FAILURE:
       return {
@@ -57,6 +57,7 @@ const usersReducer = (state = initialState, action) => {
         loginUserError: null,
         loginUserLoading: false,
         token: null,
+        user: null,
       };
 
     default:

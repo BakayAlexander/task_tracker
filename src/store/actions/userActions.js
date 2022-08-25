@@ -43,8 +43,15 @@ export const loginUser = data => {
     try {
       dispatch(loginUserRequest());
       const response = await axiosApi.post('/api/login', data);
-      dispatch(loginUserSuccess(response.data.token));
+      //! This is a custom identification current user method. It exists only because of an api problems.
+      const usersPageOne = await axiosApi.get(`/api/users?page=1`);
+      const usersPageTwo = await axiosApi.get(`/api/users?page=1`);
+      const allUsers = usersPageOne.data.data.concat(usersPageTwo.data.data);
+      const currentUser = allUsers.filter(user => user.email === data.email)[0];
       localStorage.setItem('token', response.data.token);
+      localStorage.setItem('user', JSON.stringify(currentUser));
+      dispatch(loginUserSuccess({ token: response.data.token, user: currentUser }));
+
       return response;
     } catch (error) {
       console.log('Login failed: ', error);

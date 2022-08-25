@@ -42,7 +42,7 @@ const Header = () => {
       <div className='flex items-center space-x-2 md:space-x-10'>
         <div className='flex flex-col text-[#b3b3b3] text-sm'>
           <p className='hidden md:inline'>{`${currentUser.first_name} ${currentUser.last_name}`}</p>
-          <p>{currentUser.email}</p>
+          <p className='hidden md:inline'>{currentUser.email}</p>
         </div>
         <a
           className='link'

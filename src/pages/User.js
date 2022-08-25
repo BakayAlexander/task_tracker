@@ -34,14 +34,14 @@ const User = () => {
       <h2 className='text-xl my-20'>{`Hello, ${
         currentUser.first_name || 'Alexander'
       }!`}</h2>
-      <div className='flex justify-between w-1/5 border-b border-white/25 pb-1'>
+      <div className='flex justify-between w-4/5 md:w-1/5 border-b border-white/25 pb-1'>
         <p className='text-[#b3b3b3]'>Name</p>
         <p>
           {`${currentUser.first_name} ${currentUser.last_name}` ||
             'Alexander Bakay'}
         </p>
       </div>
-      <div className='flex justify-between w-1/5 border-b border-white/25 pb-1'>
+      <div className='flex justify-between w-4/5 md:w-1/5  border-b border-white/25 pb-1'>
         <p className='text-[#b3b3b3]'>Email</p>
         <p>{currentUser.email || 'mail@mail.com'}</p>
       </div>

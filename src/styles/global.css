@@ -15,19 +15,36 @@
   .link {
     @apply cursor-pointer text-xl font-light text-[#e5e5e5] transition duration-[0.4s] hover:text-[#b3b3b3];
   }
-  .auth__input {
+
+  .auth {
+    @apply relative flex h-screen w-screen flex-col bg-black md:items-center justify-center
+    md:bg-transparent;
+  }
+
+  .authForm {
+    @apply relative mt-24 space-y-8 rounded bg-black/75 py-10 px-6 md:mt-0 md:max-w-md md:px-14 md:min-w-[450px];
+  }
+
+  .authLabel {
+    @apply inline-block w-full;
+  }
+
+  .authHeader {
+    @apply text-4xl font-semibold;
+  }
+  .authInput {
     @apply w-full rounded bg-[#333] px-5 py-3.5 placeholder-[gray] outline-none focus:bg-[#454545];
   }
-  .auth__button {
+
+  .authButton {
     @apply w-full rounded bg-[#54599f] py-3 font-semibold transition duration-[0.4s] hover:bg-[#212bba];
   }
-  .auth__error {
+
+  .authLinkButton {
+    @apply text-white hover:underline ml-1;
+  }
+
+  .authError {
     @apply p-1 text-[13px] font-light  text-orange-500;
-  }
-  .card__mail {
-    @apply cursor-pointer text-xl font-light text-[#e5e5e5] transition duration-[0.4s] hover:text-[#b3b3b3] hidden md:inline;
-  }
-  .pagination__button {
-    @apply cursor-pointer text-xl font-light text-[#e5e5e5] transition duration-[0.4s] hover:text-[#b3b3b3];
   }
 }

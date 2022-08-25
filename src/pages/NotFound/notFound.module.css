@@ -1,0 +1,15 @@
+.notFound {
+  @apply flex flex-col items-center justify-center h-[90vh];
+}
+
+.notFoundErrorNumber {
+  @apply text-[50px];
+}
+
+.notFoundErrorText {
+  @apply text-[40px] mt-5;
+}
+
+.notFoundLink {
+  @apply link mt-10;
+}

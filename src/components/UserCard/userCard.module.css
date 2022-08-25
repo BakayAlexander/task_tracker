@@ -1,0 +1,19 @@
+.userCardContainer {
+  @apply w-4/5 md:w-2/5 flex border border-white/75 px-4 py-2.5 rounded justify-between transition-all duration-[0.4s] md:hover:scale-125;
+}
+
+.userCardImage {
+  @apply cursor-pointer rounded h-20 w-20;
+}
+
+.userCardInfo {
+  @apply flex flex-col md:mr-5 items-center justify-center;
+}
+
+.userCardMail {
+  @apply flex items-center;
+}
+
+.userCardMailButton {
+  @apply cursor-pointer text-xl font-light text-[#e5e5e5] transition duration-[0.4s] hover:text-[#b3b3b3] hidden md:inline;
+}

@@ -4,9 +4,9 @@ import { useNavigate } from 'react-router-dom';
 
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 
-import { loginUser } from '../store/actions/userActions';
+import { loginUser } from '../../store/actions/userActions';
 
-import { validation } from '../utils/validation';
+import { validation } from '../../utils/validation';
 
 const Login = () => {
   const dispatch = useDispatch();
@@ -31,60 +31,57 @@ const Login = () => {
   };
 
   return (
-    <section
-      className='relative flex h-screen w-screen flex-col bg-black md:items-center justify-center
-     md:bg-transparent'
-    >
+    <section className='auth'>
       <Formik
         initialValues={initialValues}
         validate={values => validation(values)}
         onSubmit={values => handleSubmitLogin(values)}
       >
-        <Form className='relative mt-24 space-y-8 rounded bg-black/75 py-10 px-6 md:mt-0 md:max-w-md md:px-14 md:min-w-[450px]'>
-          <h1 className='text-4xl font-semibold'>Log in</h1>
+        <Form className='authForm'>
+          <h1 className='authHeader'>Log in</h1>
           <div className='space-y-4'>
-            <label className='inline-block w-full'>
+            <label className='authLabel'>
               <Field
-                className='auth__input'
+                className='authInput'
                 type='email'
                 name='email'
                 placeholder='Email'
               />
             </label>
             <ErrorMessage
-              className='auth__error'
+              className='authError'
               name='email'
               component='div'
             />
-            <label className='inline-block w-full'>
+            <label className='authLabel'>
               <Field
-                className='auth__input'
+                className='authInput'
                 type='password'
                 name='password'
                 placeholder='Password'
               />
             </label>
             <ErrorMessage
-              className='auth__error'
+              className='authError'
               name='password'
               component='div'
             />
           </div>
           <button
-            className='auth__button '
+            className='authButton'
             type='submit'
             disabled={isLoading}
           >
             Log in
           </button>
           {loginError && (
-            <p className='auth__error text-center text-[17px]'>{loginError}</p>
+            <p className='authError text-center text-[17px]'>{loginError}</p>
           )}
 
           <div className='text-[gray]'>
             Have not registered yet?
             <button
-              className='text-white hover:underline ml-1'
+              className='authLinkButton'
               type='submit'
               disabled={isLoading}
               onClick={() => {
